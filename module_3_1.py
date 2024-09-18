@@ -9,19 +9,11 @@ def count_calls():
 def string_info(string):
     count_calls()
     return (len(string), string.upper(), string.lower())
-
+# функция is_contains с двумя параметрами string и list_to_search
 def is_contains (string, list_to_search):
     count_calls()
-    string = string.lower()
-    for i in list_to_search:
-        count_calls()
-        string = string.lower()
+    return string.upper() in [s.upper() for s in list_to_search]
 
-        for j in list_to_search:
-            if string == j.lower():
-                return True
-            else:
-                return False
 
 
 print(string_info('Традесканция'))
@@ -31,4 +23,3 @@ print(is_contains('cycle', ['recycling', 'cyclic']))
 print(is_contains('Urban',['ban', 'BaNaN', 'urBAN']))
 
 print(calls)
-
